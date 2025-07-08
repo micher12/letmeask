@@ -10,3 +10,33 @@ GET {{baseUrl}}/health
 # Get rooms
 
 GET {{baseUrl}}/rooms
+
+
+###
+
+# Create room
+POST {{baseUrl}}/rooms
+Content-Type: application/json
+
+{
+    "name": "sala de teste",
+    "description": "Esse é uma sala de teste"
+}
+
+###
+
+# Get rooms questions
+
+GET {{baseUrl}}/rooms/b7f4eedc-ab71-40cc-bdaf-7bd9a49a062f/questions
+
+
+###
+
+# Create question 
+
+POST {{baseUrl}}/rooms/b7f4eedc-ab71-40cc-bdaf-7bd9a49a062f/questions
+Content-Type: application/json
+
+{
+    "question": "Como eu resolvo está questão ?"
+}

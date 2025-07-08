@@ -1,69 +1,41 @@
-# React + TypeScript + Vite
+# NLW Agents - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este projeto é o frontend do NLW Agents, desenvolvido durante um evento da Rocketseat. Ele é responsável por toda a interface visual e experiência do usuário, consumindo a API do backend para exibir e manipular dados em tempo real.
 
-Currently, two official plugins are available:
+## Principais bibliotecas utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React**: Estrutura principal para construção de interfaces reativas e componentizadas.
+- **Vite**: Ferramenta de build e servidor de desenvolvimento rápido.
+- **React Router DOM**: Gerenciamento de rotas SPA.
+- **@tanstack/react-query**: Gerenciamento de cache e requisições assíncronas.
+- **TailwindCSS**: Utilitário para estilização rápida e responsiva.
+- **Lucide React**: Biblioteca de ícones SVG.
+- **Radix UI**: Componentes acessíveis e reutilizáveis.
+- **Class Variance Authority, clsx, tailwind-merge**: Utilitários para manipulação de classes CSS.
 
-## Expanding the ESLint configuration
+## Estrutura de Pastas
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **src/pages/**: Páginas principais da aplicação (`create-room.tsx`, `room.tsx`).
+- **src/components/**: Componentes reutilizáveis, incluindo componentes de UI em `ui/` (ex: `button.tsx`).
+- **src/lib/**: Funções utilitárias (ex: `utils.ts`).
+- **src/app.tsx**: Componente raiz da aplicação.
+- **src/main.tsx**: Ponto de entrada da aplicação.
+- **src/index.css**: Estilos globais.
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Padrões de Projeto
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+- Componentização e reutilização de UI.
+- Separação clara entre páginas, componentes e utilitários.
+- Estilização com TailwindCSS para agilidade e consistência visual.
+- Consumo de API via React Query para melhor experiência e performance.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Setup
+
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Acesse em `http://localhost:5173` (ou porta configurada pelo Vite).
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---

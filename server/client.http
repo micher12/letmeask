@@ -34,9 +34,9 @@ GET {{baseUrl}}/rooms/b7f4eedc-ab71-40cc-bdaf-7bd9a49a062f/questions
 
 # Create question 
 
-POST {{baseUrl}}/rooms/b7f4eedc-ab71-40cc-bdaf-7bd9a49a062f/questions
+POST {{baseUrl}}/rooms/6b70810c-74ff-4ce9-2665-dbe392f0610b/questions
 Content-Type: application/json
 
 {
-    "question": "Como eu resolvo está questão ?"
+    "question": "O que é Vue js e qual a diferença em realação ao Angular ?"
 }
